@@ -2,7 +2,7 @@
 
 export const SubmitButton = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="fixed bottom-2 w-screen flex items-center justify-center">
       <button
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
