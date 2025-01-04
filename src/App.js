@@ -3,7 +3,7 @@ import Topbar from "./components/Topbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-screen h-screen flex flex-col justify-evenly items-center">
       <Topbar />
       <PipelineUI />
     </div>

@@ -54,7 +54,7 @@ const Topbar = () => {
   };
 
   return (
-    <div className="w-screen border border-gray-300 rounded-lg h-[20vh] bg-white flex justify-between items-center p-3">
+    <div className="w-[99%] mx-auto border border-gray-300 rounded-lg h-[20vh] bg-white flex justify-between items-center p-3">
       <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-4 justify-start">
           {categories.map((category) => (

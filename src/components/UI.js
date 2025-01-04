@@ -97,7 +97,10 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} className="w-full h-[70vh]">
+      <div
+        ref={reactFlowWrapper}
+        className="w-[99%] h-[78%] mx-auto border border-gray-300 rounded-lg"
+      >
         <ReactFlow
           nodes={nodes}
           edges={edges.map((edge) => ({ ...edge, type: "custom" }))}
