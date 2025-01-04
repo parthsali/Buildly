@@ -5,11 +5,11 @@ import { Position } from "reactflow";
 
 import { AiOutlineOpenAI } from "react-icons/ai";
 
-export const LLMNode = ({ id }) => {
+export const LLMNode = ({ id, icon }) => {
   return (
     <BaseNode
       id={id}
-      icon={<AiOutlineOpenAI />}
+      icon={icon || <AiOutlineOpenAI />}
       label="LLM Node"
       handles={[
         { type: "target", position: Position.Left, id: "system", offset: 33 },

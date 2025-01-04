@@ -5,6 +5,10 @@ import { SubmitButton } from "./Submit";
 import { MdOutlineInput } from "react-icons/md";
 import { CiText } from "react-icons/ci";
 import { AiOutlineOpenAI } from "react-icons/ai";
+import { FaGoogle } from "react-icons/fa";
+import { FaMeta } from "react-icons/fa6";
+import { RiAnthropicFill } from "react-icons/ri";
+import { FaLaptopCode } from "react-icons/fa";
 
 const categories = [
   {
@@ -28,19 +32,34 @@ const categories = [
     name: "LLMs",
     nodes: [
       {
-        name: "GPT-3",
+        name: "OpenAI",
         type: "llm",
         icon: <AiOutlineOpenAI />,
       },
       {
-        name: "GPT-4",
+        name: "Anthropic",
         type: "llm",
-        icon: <AiOutlineOpenAI />,
+        icon: <RiAnthropicFill />,
       },
       {
-        name: "GPT-5",
+        name: "Google",
         type: "llm",
-        icon: <AiOutlineOpenAI />,
+        icon: <FaGoogle />,
+      },
+      {
+        name: "Llama",
+        type: "llm",
+        icon: <FaMeta />,
+      },
+    ],
+  },
+  {
+    name: "Data",
+    nodes: [
+      {
+        name: "DataLoader",
+        type: "dataLoader",
+        icon: <MdOutlineInput />,
       },
     ],
   },
@@ -54,17 +73,27 @@ const Topbar = () => {
   };
 
   return (
-    <div className="w-[99%] mx-auto border border-gray-300 rounded-lg h-[20vh] bg-white flex justify-between items-center p-3">
-      <div className="flex flex-col gap-4">
+    <div className="w-[99%] mx-auto border border-gray-300 rounded-lg h-[30vh] bg-gray-50 flex flex-col justify-between items-center p-3 shadow-md">
+      <div className="w-full flex justify-between items-center bg-white py-2 px-4 rounded-md shadow-sm">
+        <a
+          href="/"
+          className="text-xl font-semibold text-gray-800 underline underline-offset-2 hover:text-gray-900"
+        >
+          <FaLaptopCode className="inline-block mr-2" />
+          Buildly
+        </a>
+        <SubmitButton className="ml-auto bg-gray-800 text-white px-4 rounded-md hover:bg-gray-700" />
+      </div>
+      <div className="w-full flex flex-col justify-start gap-2 mt-2">
         <div className="flex flex-row gap-4 justify-start">
           {categories.map((category) => (
             <div key={category.name}>
               <h2
                 onClick={handleChangeCategory}
-                className={`cursor-pointer text-lg font-semibold  ${
+                className={`cursor-pointer text-lg font-semibold ${
                   currentCategory === category.name
-                    ? "text-indigo-600 underline underline-offset-2 decoration-indigo-600"
-                    : "text-gray-900"
+                    ? "text-gray-800 underline underline-offset-2 decoration-gray-800"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 {category.name}
@@ -72,7 +101,7 @@ const Topbar = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-row gap-4 justify-start">
+        <div className="flex flex-row gap-4 justify-start mt-2">
           {categories &&
             categories
               .filter((category) => category.name === currentCategory)
@@ -84,14 +113,13 @@ const Topbar = () => {
                       label={node.name}
                       type={node.type}
                       icon={node.icon}
-                      className="rounded-md bg-white p-3 shadow-sm hover:shadow-md outline outline-1 outline-gray-300"
+                      className="rounded-md bg-white p-3 shadow-sm hover:shadow-md outline outline-1 outline-gray-300 hover:bg-gray-100"
                     />
                   ))}
                 </div>
               ))}
         </div>
       </div>
-      <SubmitButton className="ml-auto" />
     </div>
   );
 };

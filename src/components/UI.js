@@ -10,6 +10,7 @@ import { InputNode } from "./nodes/InputNode";
 import { LLMNode } from "./nodes/LLMNode";
 import { OutputNode } from "./nodes/OutputNode";
 import { TextNode } from "./nodes/TextNode";
+import { DataLoaderNode } from "./nodes/DataLoaderNode";
 
 import "reactflow/dist/style.css";
 import { CustomEdge } from "./Edge";
@@ -21,6 +22,7 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  dataLoader: DataLoaderNode,
 };
 
 const edgeTypes = {
@@ -99,7 +101,7 @@ export const PipelineUI = () => {
     <>
       <div
         ref={reactFlowWrapper}
-        className="w-[99%] h-[78%] mx-auto border border-gray-300 rounded-lg"
+        className="w-[99%] h-[68%] mx-auto border border-gray-300 rounded-lg"
       >
         <ReactFlow
           nodes={nodes}

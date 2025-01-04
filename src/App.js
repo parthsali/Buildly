@@ -1,13 +1,18 @@
-import { PipelineUI } from "./components/UI";
-import Topbar from "./components/Topbar";
+import React from "react";
+import { Pipeline } from "./pages/Pipeline";
+import { HomePage } from "./pages/Home";
 
-function App() {
+import { Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+const App = () => {
+  axios.defaults.baseURL = "http://localhost:8000";
   return (
-    <div className="w-screen h-screen flex flex-col justify-evenly items-center bg-white dark:bg-gray-800">
-      <Topbar />
-      <PipelineUI />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/pipeline" element={<Pipeline />} />
+    </Routes>
   );
-}
+};
 
 export default App;
