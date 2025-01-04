@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { DraggableNode } from "./DraggableNode";
+import { SubmitButton } from "./Submit";
 
 import { MdOutlineInput } from "react-icons/md";
 import { CiText } from "react-icons/ci";
@@ -53,8 +54,8 @@ const Topbar = () => {
   };
 
   return (
-    <div className="w-screen border border-gray-300 rounded-lg h-[20vh] bg-white">
-      <div className="flex flex-col gap-4 p-3">
+    <div className="w-screen border border-gray-300 rounded-lg h-[20vh] bg-white flex justify-between items-center p-3">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-4 justify-start">
           {categories.map((category) => (
             <div key={category.name}>
@@ -90,6 +91,7 @@ const Topbar = () => {
               ))}
         </div>
       </div>
+      <SubmitButton className="ml-auto" />
     </div>
   );
 };
