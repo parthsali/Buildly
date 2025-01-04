@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { BaseNode } from "./BaseNode";
 import { Position } from "reactflow";
 
+import { CiText } from "react-icons/ci";
+
 export const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
 
   return (
     <BaseNode
       id={id}
+      icon={<CiText />}
       label="Text Node"
       handles={[
         { type: "source", position: Position.Right, id: "output", offset: 50 },

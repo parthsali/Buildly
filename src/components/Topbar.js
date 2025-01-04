@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { DraggableNode } from "./DraggableNode";
 
+import { MdOutlineInput } from "react-icons/md";
+import { CiText } from "react-icons/ci";
+import { AiOutlineOpenAI } from "react-icons/ai";
+
 const categories = [
   {
     name: "General",
@@ -8,14 +12,14 @@ const categories = [
       {
         name: "Input",
         type: "customInput",
-        image: "https://via.placeholder.com/150",
+        icon: <MdOutlineInput />,
       },
       {
         name: "Output",
         type: "customOutput",
-        image: "https://via.placeholder.com/150",
+        icon: <MdOutlineInput />,
       },
-      { name: "Text", type: "text", image: "https://via.placeholder.com/150" },
+      { name: "Text", type: "text", icon: <CiText /> },
     ],
   },
 
@@ -25,22 +29,17 @@ const categories = [
       {
         name: "GPT-3",
         type: "llm",
-        image: "https://cdn.openai.com/research-covers/gpt-3.png",
+        icon: <AiOutlineOpenAI />,
       },
       {
         name: "GPT-4",
         type: "llm",
-        image: "https://cdn.openai.com/research-covers/gpt-3.png",
+        icon: <AiOutlineOpenAI />,
       },
       {
         name: "GPT-5",
         type: "llm",
-        image: "https://cdn.openai.com/research-covers/gpt-3.png",
-      },
-      {
-        name: "GPT-6",
-        type: "llm",
-        image: "https://cdn.openai.com/research-covers/gpt-3.png",
+        icon: <AiOutlineOpenAI />,
       },
     ],
   },
@@ -83,7 +82,7 @@ const Topbar = () => {
                       key={node.name}
                       label={node.name}
                       type={node.type}
-                      image={node.image}
+                      icon={node.icon}
                       className="rounded-md bg-white p-3 shadow-sm hover:shadow-md outline outline-1 outline-gray-300"
                     />
                   ))}

@@ -2,13 +2,21 @@
 import React from "react";
 import { Handle, Position } from "reactflow";
 
-export const BaseNode = ({ id, label, handles = [], children, style = "" }) => {
+export const BaseNode = ({
+  id,
+  label,
+  icon,
+  handles = [],
+  children,
+  style = "",
+}) => {
   return (
     <div
       className={`w-56 min-h-28 border border-gray-300 bg-white p-3 rounded-lg shadow-lg ${style}`}
       data-id={id}
     >
-      <div className="text-gray-900 font-semibold mb-2">
+      <div className="flex items-center text-gray-900 font-semibold mb-2">
+        {icon && <span className="mr-2">{icon}</span>}
         {label && <span>{label}</span>}
       </div>
 

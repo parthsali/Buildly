@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BaseNode } from "./BaseNode";
 import { Position } from "reactflow";
+import { MdOutlineInput } from "react-icons/md";
 
 export const InputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(
@@ -21,6 +22,7 @@ export const InputNode = ({ id, data }) => {
   return (
     <BaseNode
       id={id}
+      icon={<MdOutlineInput />}
       label="Input Node"
       handles={[
         { type: "source", position: Position.Right, id: "value", offset: 50 },

@@ -1,6 +1,6 @@
 // draggableNode.js
 
-export const DraggableNode = ({ type, label, image }) => {
+export const DraggableNode = ({ type, label, icon }) => {
   const onDragStart = (event, nodeType) => {
     const appData = { nodeType };
     event.target.style.cursor = "grabbing";
@@ -18,8 +18,8 @@ export const DraggableNode = ({ type, label, image }) => {
       onDragEnd={(event) => (event.target.style.cursor = "grab")}
       draggable
     >
-      <div className="text-gray-900 font-semibold flex items-center">
-        {image && <img src={image} alt="logo" className="w-6 h-6 mr-2" />}
+      <div className="text-gray-900 font-semibold flex items-center gap-1">
+        {icon}
         <span>{label}</span>
       </div>
     </div>

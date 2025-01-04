@@ -3,10 +3,13 @@ import React from "react";
 import { BaseNode } from "./BaseNode";
 import { Position } from "reactflow";
 
+import { AiOutlineOpenAI } from "react-icons/ai";
+
 export const LLMNode = ({ id }) => {
   return (
     <BaseNode
       id={id}
+      icon={<AiOutlineOpenAI />}
       label="LLM Node"
       handles={[
         { type: "target", position: Position.Left, id: "system", offset: 33 },
