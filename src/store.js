@@ -33,6 +33,11 @@ export const useStore = create((set, get) => ({
       ),
     });
   },
+  removeEdge: (edgeId) => {
+    set({
+      edges: get().edges.filter((edge) => edge.id !== edgeId),
+    });
+  },
   onNodesChange: (changes) => {
     set({
       nodes: applyNodeChanges(changes, get().nodes),

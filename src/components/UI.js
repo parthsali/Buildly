@@ -12,6 +12,7 @@ import { OutputNode } from "./nodes/OutputNode";
 import { TextNode } from "./nodes/TextNode";
 
 import "reactflow/dist/style.css";
+import { CustomEdge } from "./Edge";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +21,10 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+};
+
+const edgeTypes = {
+  custom: CustomEdge,
 };
 
 const selector = (state) => ({
@@ -95,7 +100,7 @@ export const PipelineUI = () => {
       <div ref={reactFlowWrapper} className="w-full h-[70vh]">
         <ReactFlow
           nodes={nodes}
-          edges={edges}
+          edges={edges.map((edge) => ({ ...edge, type: "custom" }))}
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
@@ -103,6 +108,7 @@ export const PipelineUI = () => {
           onDragOver={onDragOver}
           onInit={setReactFlowInstance}
           nodeTypes={nodeTypes}
+          edgeTypes={edgeTypes}
           proOptions={proOptions}
           snapGrid={[gridSize, gridSize]}
           connectionLineType="smoothstep"
