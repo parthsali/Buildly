@@ -1,38 +1,27 @@
-// llmNode.js
+// LLMNode.js
+import React from "react";
+import { BaseNode } from "./BaseNode";
+import { Position } from "reactflow";
 
-import { Handle, Position } from "reactflow";
-
-export const LLMNode = ({ id, data }) => {
+export const LLMNode = ({ id }) => {
   return (
-    <div className="w-52 h-24 border border-gray-700 bg-gray-800 p-3 rounded-lg shadow-lg">
-      <div className="text-white font-semibold mb-2">
-        <span>LLM Node</span>
+    <BaseNode
+      id={id}
+      label="LLM Node"
+      handles={[
+        { type: "target", position: Position.Left, id: "system", offset: 33 },
+        { type: "target", position: Position.Left, id: "prompt", offset: 66 },
+        {
+          type: "source",
+          position: Position.Right,
+          id: "response",
+          offset: 50,
+        },
+      ]}
+    >
+      <div className="text-gray-300 text-sm">
+        <span>This is a LLM.</span>
       </div>
-      <div className="space-y-3">
-        <div className="text-gray-300 text-sm">
-          <span>This is a LLM.</span>
-        </div>
-      </div>
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-system`}
-        style={{ top: `${100 / 3}%` }}
-        className="bg-gray-600 w-3 h-3"
-      />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        style={{ top: `${200 / 3}%` }}
-        className="bg-gray-600 w-3 h-3"
-      />
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-        className="bg-gray-600 w-3 h-3"
-      />
-    </div>
+    </BaseNode>
   );
 };
