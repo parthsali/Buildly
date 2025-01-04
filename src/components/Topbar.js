@@ -61,9 +61,9 @@ const Topbar = () => {
             <div key={category.name}>
               <h2
                 onClick={handleChangeCategory}
-                className={`cursor-pointer text-lg font-semibold ${
+                className={`cursor-pointer text-lg font-semibold  ${
                   currentCategory === category.name
-                    ? "text-indigo-600"
+                    ? "text-indigo-600 underline underline-offset-2 decoration-indigo-600"
                     : "text-gray-900"
                 }`}
               >
