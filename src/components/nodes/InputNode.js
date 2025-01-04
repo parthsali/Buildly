@@ -27,21 +27,21 @@ export const InputNode = ({ id, data }) => {
       ]}
     >
       {/* Input Fields */}
-      <label className="block text-gray-300 text-sm">
+      <label className="block text-gray-900 text-sm font-medium">
         Name:
         <input
           type="text"
           value={currName}
           onChange={handleNameChange}
-          className="mt-1 block w-full bg-gray-700 text-white border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
         />
       </label>
-      <label className="block text-gray-300 text-sm">
+      <label className="block text-gray-900 text-sm font-medium">
         Type:
         <select
           value={inputType}
           onChange={handleTypeChange}
-          className="mt-1 block w-full bg-gray-700 text-white border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
         >
           <option value="Text">Text</option>
           <option value="File">File</option>

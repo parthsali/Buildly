@@ -19,7 +19,7 @@ export const LLMNode = ({ id }) => {
         },
       ]}
     >
-      <div className="text-gray-300 text-sm">
+      <div className="text-gray-900 text-base">
         <span>This is a LLM.</span>
       </div>
     </BaseNode>

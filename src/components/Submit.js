@@ -5,7 +5,7 @@ export const SubmitButton = () => {
     <div className="fixed bottom-2 w-screen flex items-center justify-center">
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         Submit
       </button>

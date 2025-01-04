@@ -5,10 +5,10 @@ import { Handle, Position } from "reactflow";
 export const BaseNode = ({ id, label, handles = [], children, style = "" }) => {
   return (
     <div
-      className={`w-56 min-h-28 border border-gray-700 bg-gray-800 p-3 rounded-lg shadow-lg ${style}`}
+      className={`w-56 min-h-28 border border-gray-300 bg-white p-3 rounded-lg shadow-lg ${style}`}
       data-id={id}
     >
-      <div className="text-white font-semibold mb-2">
+      <div className="text-gray-900 font-semibold mb-2">
         {label && <span>{label}</span>}
       </div>
 
@@ -26,8 +26,12 @@ export const BaseNode = ({ id, label, handles = [], children, style = "" }) => {
               position === Position.Left || position === Position.Right
                 ? `${offset}%`
                 : undefined,
+            backgroundColor: "transparent",
+
+            borderRadius: "50%",
+            border: "2px solid #6366f1",
           }}
-          className="bg-gray-600 w-3 h-3"
+          className="bg-transparent w-3 h-3 border-2 border-indigo-600"
         />
       ))}
     </div>
