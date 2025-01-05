@@ -73,7 +73,7 @@ const Topbar = () => {
   };
 
   return (
-    <div className="w-[99%] mx-auto border border-gray-300 rounded-lg h-[30vh] bg-gray-50 flex flex-col justify-between items-center p-3 shadow-md">
+    <div className="w-[99%] mx-auto border border-gray-300 rounded-lg h-auto max-h-[30vh] bg-gray-50 flex flex-col justify-between items-center p-3 shadow-md">
       <div className="w-full flex justify-between items-center bg-white py-2 px-4 rounded-md shadow-sm">
         <a
           href="/"

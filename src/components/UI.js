@@ -101,7 +101,7 @@ export const PipelineUI = () => {
     <>
       <div
         ref={reactFlowWrapper}
-        className="w-[99%] h-[68%] mx-auto border border-gray-300 rounded-lg"
+        className="w-[99%] h-auto min-h-[68%] mx-auto border border-gray-300 rounded-lg"
       >
         <ReactFlow
           nodes={nodes}
