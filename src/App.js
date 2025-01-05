@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 const App = () => {
-  axios.defaults.baseURL = "http://localhost:8000";
+  axios.defaults.baseURL = "https://buildly-backend.onrender.com";
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
